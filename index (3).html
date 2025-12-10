@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LG Solar - Mejora el medio ambiente</title>
+<style>
+    /* Reset básico */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body, html {width: 100%; font-family: cursive, Tahoma, Geneva, Verdana, sans-serif;}
+
+    /* Header */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-size: 14px;
+    }
+    .logo {display: flex; align-items: center; gap: 8px; font-weight: bold; color: #333;}
+    .logo-text {font-size: 12px; font-weight: normal; color: #666;}
+    nav {display: flex; gap: 30px;}
+    nav a {text-decoration: none; color:#333; font-size:14px; transition: color 0.3s;}
+    nav a:hover {color: #c4622d;}
+
+    /* Hero */
+    .hero {
+        position: relative;
+        height: 100vh;
+        background: url('IMAGEN/001.jpg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 40px;
+        color: white;
+    }
+    .hero::before {
+        content:''; 
+        position:absolute; top:0; left:0; right:0; bottom:0;
+        background: rgba(0,0,0,0.2); /* menos oscuro, más luz */
+        z-index:1;
+    }
+    .hero-content {position: relative; z-index:2; max-width: 500px;}
+    .hero h1 {font-size: 50px; font-weight: 300; line-height: 1.2; margin-bottom:20px;}
+    .hero p {font-size:14px; line-height:1.4; margin-bottom:25px;}
+    /* Botón Ver cómo igual forma que Enviar */
+    .btn-primary {
+        display:inline-block; padding:8px 30px;
+        border-radius:5px;
+        border:none;
+        font-size:14px;
+        text-decoration:none;
+        background:white;
+        color:#c4622d;
+        cursor:pointer;
+        transition: background 0.3s;
+    }
+    .btn-primary:hover {background:#f2f2f2;}
+
+    /* Separador blanco corto */
+    .separator {height:8px; background-color: white; width: 100%;}
+
+    /* Form */
+    .form-section {
+        width: 100%;
+        background: linear-gradient(to bottom,#1a2b3c 0%,#0d1820 100%);
+        display:flex;
+        justify-content: flex-start; /* Alineado a la izquierda */
+        align-items: flex-start;     /* Subido hacia arriba */
+        padding: 40px;
+        color:white;
+    }
+    .form-container {max-width:900px; width:100%;}
+    .form-section h2 {font-size:28px; margin-bottom:25px; font-weight:300;}
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 0px; /* inputs pegados */
+        margin-bottom:20px;
+    }
+    .form-group {display:flex; flex-direction:column;}
+    .form-group label {margin-bottom:3px; font-size:12px; opacity:0.9;}
+    .form-group input {
+        padding:8px;
+        font-size:12px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.3);
+        color:white;
+        width:100%;
+        height:30px;
+        transition: border-color 0.3s;
+    }
+    .form-group input:focus {outline:none; border-color:#c4622d;}
+    .form-group input::placeholder {color:rgba(255,255,255,0.5);}
+
+    /* Contenedor de checkboxes y botón */
+    .checkbox-submit-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:20px;
+    }
+    .checkbox-group {display:flex; gap:20px; align-items:center;}
+    .checkbox-label {display:flex; align-items:center; gap:5px; cursor:pointer;}
+    .checkbox-label input[type="checkbox"] {width:16px; height:16px; cursor:pointer;}
+
+    .btn-submit {
+        padding:8px 30px;
+        background:#c4622d;
+        color:white;
+        border:none;
+        border-radius:5px;
+        font-size:14px;
+        cursor:pointer;
+        transition: background 0.3s;
+    }
+    .btn-submit:hover {background:#a0511f;}
+
+    /* Responsive */
+    @media (max-width:768px) {
+        .hero h1 {font-size:36px;}
+        .form-grid {grid-template-columns:1fr;}
+        .checkbox-submit-container {flex-direction: column; align-items: flex-start;}
+        .btn-submit {margin-top:10px;}
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+            <rect fill="#c4622d" width="8" height="8"/>
+            <rect fill="#c4622d" x="12" width="8" height="8"/>
+            <rect fill="#c4622d" y="12" width="8" height="8"/>
+            <rect fill="#c4622d" x="12" y="12" width="8" height="8"/>
+        </svg>
+        <strong>LG Solar</strong>
+        <span class="logo-text">Mejora el medio ambiente</span>
+    </div>
+    <nav>
+        <a href="#por-que">Por qué LG Solar</a>
+        <a href="#acerca">Acerca de</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Son tiempos<br>de cambio</h1>
+        <p>Genera y almacena tu propia energía. Empieza a ahorrar<br>ya con energía limpia y ecológica.</p>
+        <a href="#form" class="btn-primary">Ver cómo</a>
+    </div>
+</section>
+
+<!-- Separador blanco corto -->
+<div class="separator"></div>
+
+<section id="form" class="form-section">
+    <div class="form-container">
+        <h2>¡Obtén hoy un estimado sin compromiso!</h2>
+        <form id="contactForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required />
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido *</label>
+                    <input type="text" id="apellido" name="apellido" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required />
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" />
+                </div>
+            </div>
+
+            <div class="checkbox-submit-container">
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="tipo" value="propietario" />
+                        <span>Propietario</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="tipo" value="empresario" />
+                        <span>Empresario</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+    });
+
+    // Form submit
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('¡Gracias por tu interés! Nos pondremos en contacto pronto.');
+        this.reset();
+    });
+
+    // Header shadow
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        const currentScroll = window.pageYOffset;
+        header.style.boxShadow = currentScroll > 100 ? '0 4px 20px rgba(0,0,0,0.15)' : '0 2px 10px rgba(0,0,0,0.1)';
+    });
+</script>
+</body>
+</html>
